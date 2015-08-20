@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity implements DatePickerControl
 
         calendarView = (DayPickerView) findViewById(R.id.calendar_view);
         calendarView.setController(this);
+
+        calendarView.scrollToToday();
     }
 
     @Override

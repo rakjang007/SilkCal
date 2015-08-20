@@ -25,8 +25,7 @@ public class SimpleMonthAdapter extends RecyclerView.Adapter<SimpleMonthAdapter.
     private final Integer lastMonth;
     private boolean isDragging = false;
     private HashMap<CalendarDay, Integer> countMap;
-    private HashMap<CalendarMonth, HashMap<CalendarDay, Integer>> monthCountMap =
-            new HashMap<>();
+    private HashMap<CalendarMonth, HashMap<CalendarDay, Integer>> monthCountMap = new HashMap<>();
 
 
     public SimpleMonthAdapter(Context context, DatePickerController datePickerController, TypedArray typedArray) {
@@ -55,14 +54,14 @@ public class SimpleMonthAdapter extends RecyclerView.Adapter<SimpleMonthAdapter.
         int year;
 
         month = (firstMonth + (position % MONTHS_IN_YEAR)) % MONTHS_IN_YEAR;
-        year = position / MONTHS_IN_YEAR - 1 + calendar.get(Calendar.YEAR);
+        year = position / MONTHS_IN_YEAR - 2 + calendar.get(Calendar.YEAR);
 
         int selectedFirstDay = -1;
         int selectedLastDay = -1;
         int selectedFirstMonth = -1;
         int selectedLastMonth = -1;
-        int selectedFirstYear = -1;
-        int selectedLastYear = -1;
+        int selectedFirstYear = -2;
+        int selectedLastYear = -2;
 
         if (selectedDays.getFirst() != null)
         {
@@ -106,7 +105,7 @@ public class SimpleMonthAdapter extends RecyclerView.Adapter<SimpleMonthAdapter.
     @Override
     public int getItemCount()
     {
-        int itemCount = 3 * MONTHS_IN_YEAR;
+        int itemCount = 5 * MONTHS_IN_YEAR;
         return itemCount;
     }
 

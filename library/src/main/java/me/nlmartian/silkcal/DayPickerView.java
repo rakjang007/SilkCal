@@ -39,6 +39,7 @@ public class DayPickerView extends RecyclerView
         if (!isInEditMode())
         {
             typedArray = context.obtainStyledAttributes(attrs, R.styleable.DayPickerView);
+//            Log.w(getClass().getSimpleName(), "DayPickerView typedArray:" + typedArray);
             setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
             this.setOverScrollMode(OVER_SCROLL_NEVER);
             init(context);
